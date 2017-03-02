@@ -67,14 +67,14 @@
         });
 
         //Initialising it to the "Metabolism of nucleotides" pathway
-        diagram.loadDiagram("R-HSA-15869");
+        diagram.loadDiagram("R-OSA-8933811");
 
         //Adding different listeners
 
         diagram.onDiagramLoaded(function (loaded) {
             console.info("Loaded ", loaded);
-            diagram.flagItems("TXN");
-            diagram.selectItem("R-HSA-111804");
+            diagram.flagItems("ELF3");
+            diagram.selectItem("R-OSA-8933764");
         });
 
         diagram.onObjectHovered(function (hovered){
@@ -328,11 +328,11 @@
             "height": 450
         });
 
-        diagram.loadDiagram("R-HSA-15869");
+        diagram.loadDiagram("R-OSA-8933811");
         diagram.onDiagramLoaded(function (loaded) {
             console.info("Loaded ", loaded);
-            diagram.flagItems("TXN");
-            if(loaded == "R-HSA-15869") diagram.selectItem("R-HSA-111804");
+            diagram.flagItems("ELF3");
+            if(loaded == "R-HSA-15869") diagram.selectItem("R-OSA-8933764");
         });
         diagram.onObjectHovered(function (hovered) {
             console.info("Hovered ", hovered);
