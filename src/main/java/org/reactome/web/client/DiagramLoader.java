@@ -59,7 +59,7 @@ public class DiagramLoader implements DatabaseObjectCreatedHandler, AncestorsCre
             return;
         }
         target = null;
-        Console.error("The provided identifier is not an 'Event' in Reactome");
+        Console.error("The provided identifier is not an 'Event' in Plant Reactome");
     }
 
     @Override

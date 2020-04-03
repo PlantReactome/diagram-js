@@ -19,7 +19,7 @@
         </div>
     </noscript>
 
-    <h1>Reusing Reactome's Diagram Widget?</h1>
+    <h1>Reusing Plant Reactome's Diagram Widget?</h1>
 
     <div class="diagram">
         <div id="diagramHolder"></div>
@@ -28,9 +28,9 @@
     <div style="clear: left; max-width: 650px;">
         <h2>What is it?</h2>
         <p style="text-align: justify">
-            The Reactome Pathway Diagram Viewer provides users an intuitive means of viewing and interacting with pathway diagrams.
-            Pathway diagrams represent the steps of a pathway as a series of interconnected molecular events, known in Reactome as 'reactions'.
-            Reactions are the core unit of Reactome's data model. They encapsulate 'changes of state' in biology, such as the familiar
+            The Plant Reactome Pathway Diagram Viewer provides users an intuitive means of viewing and interacting with pathway diagrams.
+            Pathway diagrams represent the steps of a pathway as a series of interconnected molecular events, known in Plant Reactome as 'reactions'.
+            Reactions are the core unit of Plant Reactome's data model. They encapsulate 'changes of state' in biology, such as the familiar
             biochemical reaction where substrates are converted into products by the action of a catalyst, but also include processes such as
             transport of molecules from one cellular compartment to another, binding, dissociation, phosphorylation, degradation and more.
         </p>
@@ -44,7 +44,7 @@
     <div class="example">
         <h4>1. Include the diagram javascript dependency in you HTML header</h4>
         <pre class="prettyprint code" >
-    &lt;script type="text/javascript" language="javascript" src="http://reactome.org/DiagramJs/diagram/diagram.nocache.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" language="javascript" src="https://plantreactome.gramene.org/DiagramJs/diagram/diagram.nocache.js"&gt;&lt;/script&gt;
         </pre>
 
         <h4>2. Add a place holder in the body of your web page</h4>
@@ -52,15 +52,15 @@
     &lt;div id="diagramHolder"&gt;&lt;/div&gt;
         </pre>
 
-        <h4>3. Set a proxy in your server under "/reactome" pointing to "http://reactome.org"</h4>
+        <h4>3. Set a proxy in your server under "/reactome" pointing to "https://plantreactome.gramene.org"</h4>
 
         <h4>4. Create and initialise the diagram viewer from your javascript code</h4>
         <pre class="prettyprint code" >
-    //Creating the Reactome Diagram widget
-    //Take into account a proxy needs to be set up in your server side pointing to reactome.org
+    //Creating the Plant Reactome Diagram widget
+    //Take into account a proxy needs to be set up in your server side pointing to plantreactome.gramene.org
     function onReactomeDiagramReady(){  //This function is automatically called when the widget code is ready to be used
         var diagram = Reactome.Diagram.create({
-            "proxyPrefix" : "/reactome",
+            "proxyPrefix" : "https://plantreactome.gramene.org",
             "placeHolder" : "diagramHolder",
             "width" : 650,
             "height" : 450
@@ -74,7 +74,7 @@
         diagram.onDiagramLoaded(function (loaded) {
             console.info("Loaded ", loaded);
             diagram.flagItems("ELF3");
-            diagram.selectItem("R-OSA-8933764");
+            diagram.selectItem("R-OSA-8933860");
         });
 
         diagram.onObjectHovered(function (hovered){
@@ -323,6 +323,7 @@
 <script>
     function onReactomeDiagramReady() {
         diagram = Reactome.Diagram.create({
+            "proxyPrefix" : "https://plantreactome.gramene.org",
             "placeHolder": "diagramHolder",
             "width": 650,
             "height": 450
@@ -332,7 +333,7 @@
         diagram.onDiagramLoaded(function (loaded) {
             console.info("Loaded ", loaded);
             diagram.flagItems("ELF3");
-            if(loaded == "R-HSA-15869") diagram.selectItem("R-OSA-8933764");
+            if(loaded == "R-OSA-8933811") diagram.selectItem("R-OSA-8933860");
         });
         diagram.onObjectHovered(function (hovered) {
             console.info("Hovered ", hovered);

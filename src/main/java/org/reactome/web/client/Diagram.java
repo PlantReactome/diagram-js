@@ -26,7 +26,7 @@ import org.timepedia.exporter.client.Exportable;
 @Export("Diagram")
 public class Diagram implements Exportable {
 
-    private static final String SERVER = "http://reactome.org";
+    private static final String SERVER = "https://plantreactome.gramene.org";
 
     private static Diagram viewer;
 
@@ -66,7 +66,7 @@ public class Diagram implements Exportable {
     public static Diagram create(String placeHolder, String server, final int width, final int height) {
         final Element element = Document.get().getElementById(placeHolder);
         if (element == null)
-            throw new RuntimeException("Reactome diagram cannot be initialised. Please provide a valid 'placeHolder' (\"" + placeHolder + "\" invalid place holder).");
+            throw new RuntimeException("Plant Reactome diagram cannot be initialised. Please provide a valid 'placeHolder' (\"" + placeHolder + "\" invalid place holder).");
 
         if (viewer == null) {
             RESTFulClient.SERVER = server;
